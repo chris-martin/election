@@ -11,5 +11,6 @@ urlpatterns = patterns('',
   # to INSTALLED_APPS to enable admin documentation:
   # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
+  (r'^bills/$', 'election.bills.views.index'),
   (r'^admin/', include(admin.site.urls)),
 )

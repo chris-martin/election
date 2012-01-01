@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Bills</title>
+    <style type="text/css">
+      .bill { list-style: none; }
+      .bill div { display: inline-block; padding: 0.2em; }
+      .bill .number { width: 8em; background-color: #cccccc; }
+      .bill .nick { width: 15em; background-color: #aaaaaa; }
+      .bill .name { width: 30em; background-color: #cccccc; }
+    </style>
+  </head>
+  <body>
+  {% if bill_list %}
+    <ul>
+    {% for bill in bill_list %}
+      <li class="bill">
+        <div class="number">{{ bill.number }}</div>
+        <div class="nick">{{ bill.nick }}</div>
+        <div class="name">{{ bill.name }}</div>
+      </li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no bills.</p>
+  {% endif %}
+  </body>
+</html>
