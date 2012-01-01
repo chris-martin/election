@@ -15,4 +15,6 @@ class Politician(models.Model):
 class Supporter(models.Model):
   bill = models.ForeignKey(Bill)
   politician = models.ForeignKey(Politician)
+  def __unicode__(self):
+    return self.bill.__unicode__() + ': ' + self.politician.__unicode__()
 
