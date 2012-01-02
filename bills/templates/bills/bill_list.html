@@ -1,15 +1,17 @@
-<html>
-  <head>
-    <title>Bills</title>
-    <style type="text/css">
-      .bill { list-style: none; }
-      .bill div { display: inline-block; padding: 0.2em; }
-      .bill .number { width: 8em; background-color: #cccccc; }
-      .bill .nick { width: 15em; background-color: #aaaaaa; }
-      .bill .name { width: 30em; background-color: #cccccc; }
-    </style>
-  </head>
-  <body>
+{% extends "core/base.html" %}
+
+{% block title %}Bills{% endblock %}
+
+{% block style %}
+  {{ block.super }}
+  .bill { list-style: none; }
+  .bill div { display: inline-block; padding: 0.2em; }
+  .bill .number { width: 8em; background-color: #cccccc; }
+  .bill .nick { width: 15em; background-color: #aaaaaa; }
+  .bill .name { width: 30em; background-color: #cccccc; }
+{% endblock %}
+
+{% block body %}
   {% if object_list %}
     <ul>
     {% for bill in object_list %}
@@ -23,5 +25,4 @@
   {% else %}
     <p>There are no bills.</p>
   {% endif %}
-  </body>
-</html>
+{% endblock %}
