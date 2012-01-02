@@ -10,9 +10,9 @@
     </style>
   </head>
   <body>
-  {% if bill_list %}
+  {% if object_list %}
     <ul>
-    {% for bill in bill_list %}
+    {% for bill in object_list %}
       <li class="bill">
         <div class="number">{{ bill.number }}</div>
         <div class="nick">{{ bill.nick }}</div>

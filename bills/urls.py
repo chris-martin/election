@@ -1,7 +1,12 @@
 from django.conf.urls.defaults import *
-
 from django.contrib import admin
+from election.bills.models import Bill
+
 admin.autodiscover()
+
+info_dict = {
+  'queryset': Bill.objects.all(),
+}
 
 urlpatterns = patterns('',
   # Example:
@@ -11,5 +16,5 @@ urlpatterns = patterns('',
   # to INSTALLED_APPS to enable admin documentation:
   # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-  (r'^$', 'election.bills.views.index'),
+  (r'^$', 'django.views.generic.list_detail.object_list', info_dict),
 )
